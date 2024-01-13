@@ -1,7 +1,6 @@
 def call(Map config = [:]){
     dir(output_path)
     {
-        echo output_path
         docFiles = findFiles(glob: "${config.cur_suffix}")
         if (docFiles.size() == 0)
         {
