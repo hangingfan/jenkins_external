@@ -1,18 +1,4 @@
 def call(Map config = [:]){
-    def invokeOtherTask(String currentJobName, String channel, String buildtype, String auto_trigger, String sdk_env, String u8_enable, String version_env, String regenerate, String origin_package)
-    {
-        build job: currentJobName, wait: false, parameters: [
-        string(name: 'channel', value: channel),
-        string(name: 'buildtype', value: buildtype),
-        string(name: 'auto_trigger', value: auto_trigger),
-        string(name: 'sdk_env', value: sdk_env),
-        string(name: 'u8_enable', value: u8_enable),
-        string(name: 'version_env', value: version_env),
-        string(name: 'regenerate', value: regenerate),
-        string(name: 'origin_package', value: origin_package),
-        ]
-    }
-
     if("${config.channel}".contains('批量官包_withboard'))
     {
         channel = 'official_android'
@@ -48,3 +34,16 @@ def call(Map config = [:]){
         invokeOtherTask("${config.currentJobName}", 'googleplay', 'release', 'None', 'prod', '1', "${config.version_env}, '1', '0'")
     }
 }
+
+def invokeOtherTask(String currentJobName, String channel, String buildtype, String auto_trigger, String sdk_env, String u8_enable, String version_env, String regenerate, String origin_package){
+        build job: currentJobName, wait: false, parameters: [
+        string(name: 'channel', value: channel),
+        string(name: 'buildtype', value: buildtype),
+        string(name: 'auto_trigger', value: auto_trigger),
+        string(name: 'sdk_env', value: sdk_env),
+        string(name: 'u8_enable', value: u8_enable),
+        string(name: 'version_env', value: version_env),
+        string(name: 'regenerate', value: regenerate),
+        string(name: 'origin_package', value: origin_package),
+        ]
+    }
