@@ -7,6 +7,7 @@ def call(Map config = [:]){
         string(name: 'u8_enable', value: "${config.u8_enable}"),
         string(name: 'version_env', value: "${config.version_env}"),
         string(name: 'regenerate', value: "${config.regenerate}"),
+        string(name: 'final_upload', value: "1"),
         string(name: 'origin_package', value: "${config.origin_package}"),
         ]
 }
