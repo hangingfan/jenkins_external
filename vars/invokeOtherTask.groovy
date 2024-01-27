@@ -1,5 +1,5 @@
 def call(Map config = [:]){
-    build job: currentJobName, wait: false, parameters: [
+    build job: "${config.currentJobName}", wait: false, parameters: [
         string(name: 'channel', value: "${config.channel}"),
         string(name: 'buildtype', value: "${config.buildtype}"),
         string(name: 'auto_trigger', value: "${config.auto_trigger}"),
