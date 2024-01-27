@@ -1,3 +1,4 @@
+
 def call(Map config = [:]){
     if("${config.channel}".contains('批量官包_withboard'))
     {
@@ -9,12 +10,12 @@ def call(Map config = [:]){
         regenerate = '1'
         u8_enable = '1'
 
-        invokeOtherTask("${config.currentJobName}", 'bilibili', 'release_withboard', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'huawei', 'release_withboard', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'oceanengine', 'release_withboard', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'taptap', 'release_withboard', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'haoyoukuaibao', 'release_withboard', 'None', 'prod', '1', "${config.version_env}, '0', '1'")
-        invokeOtherTask("${config.currentJobName}", 'googleplay', 'release_withboard', 'None', 'prod', '1', "${config.version_env}, '1', '0'")
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'bilibili', buildtype:'release_withboard', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'huawei', buildtype:'release_withboard', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'oceanengine', buildtype:'release_withboard', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'taptap', buildtype:'release_withboard', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'haoyoukuaibao', buildtype:'release_withboard', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'googleplay', buildtype:'release_withboard', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'1', origin_package:'0')
     }
     else if("${config.channel}".contains('批量官包release'))
     {
@@ -26,11 +27,11 @@ def call(Map config = [:]){
         regenerate = '1'
         u8_enable = '1'
 
-        invokeOtherTask("${config.currentJobName}", 'bilibili', 'release', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'huawei', 'release', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'oceanengine', 'release', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'taptap', 'release', 'None', 'prod', '1', "${config.version_env}", '0', '1')
-        invokeOtherTask("${config.currentJobName}", 'haoyoukuaibao', 'release', 'None', 'prod', '1', "${config.version_env}, '0', '1'")
-        invokeOtherTask("${config.currentJobName}", 'googleplay', 'release', 'None', 'prod', '1', "${config.version_env}, '1', '0'")
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'bilibili', buildtype:'release', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'huawei', buildtype:'release', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'oceanengine', buildtype:'release', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'taptap', buildtype:'release', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'haoyoukuaibao', buildtype:'release', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'0', origin_package:'1')
+        invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'googleplay', buildtype:'release', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'1', origin_package:'0')
     }
 }
