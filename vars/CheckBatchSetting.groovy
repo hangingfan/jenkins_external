@@ -1,5 +1,5 @@
 def call(Map config = [:]){
-    def invokeOtherTask(currentJobName, channel, buildtype, auto_trigger, sdk_env, u8_enable, version_env, regenerate, origin_package)
+    def invokeOtherTask(String currentJobName, String channel, String buildtype, String auto_trigger, String sdk_env, String u8_enable, String version_env, String regenerate, String origin_package)
     {
         build job: currentJobName, wait: false, parameters: [
         string(name: 'channel', value: channel),
