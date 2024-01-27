@@ -10,8 +10,7 @@ def call(Map config = [:]){
         invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'googleplay', buildtype:'release_withboard', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'1', origin_package:'0')
 
         currentBuild.result = 'ABORTED'
-        currentBuild.description = 'Manually aborted due to 批量任务'
-        currentBuild.abort()
+        error('Manually aborted due to 批量任务')
     }
     else if("${config.channel}".contains('批量官包release'))
     {
@@ -24,7 +23,6 @@ def call(Map config = [:]){
         invokeOtherTask(currentJobName:"${config.currentJobName}", channel:'googleplay', buildtype:'release', auto_trigger:'None', sdk_env:'prod', u8_enable:'1', version_env:"${config.version_env}", regenerate:'1', origin_package:'0')
 
         currentBuild.result = 'ABORTED'
-        currentBuild.description = 'Manually aborted due to 批量任务'
-        currentBuild.abort()
+        error('Manually aborted due to 批量任务')
     }
 }
