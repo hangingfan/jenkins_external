@@ -5,7 +5,7 @@ def call(Map config = [:]){
         {
             sh(script: "${config.apksigner_path}/apksigner sign --ks ${config.projectpath}/Build/exports/keystores/elrond_oversea.keystore --ks-key-alias elrond --v1-signing-enabled true --v2-signing-enabled true --ks-pass pass:Rotk20161213 --key-pass pass:4gnu\\\$22*da8mfj\\&8 --min-sdk-version 24 ${config.projectpath}/Build/outputs/${config.normalFileName}.aab")
 
-            sh(script: "${config.apksigner_path}/apksigner sign --ks ${projectpath}/Build/exports/keystores/elrond_oversea.keystore --ks-key-alias elrond --v1-signing-enabled true --v2-signing-enabled true --ks-pass pass:Rotk20161213 --key-pass pass:4gnu\\\$22*da8mfj\\&8 --min-sdk-version 24 ${config.projectpath}/Build/outputs/${config.normalFileName}.apk")
+            sh(script: "${config.apksigner_path}/apksigner sign --ks ${config.projectpath}/Build/exports/keystores/elrond_oversea.keystore --ks-key-alias elrond --v1-signing-enabled true --v2-signing-enabled true --ks-pass pass:Rotk20161213 --key-pass pass:4gnu\\\$22*da8mfj\\&8 --min-sdk-version 24 ${config.projectpath}/Build/outputs/${config.normalFileName}.apk")
         }
         else
         {
