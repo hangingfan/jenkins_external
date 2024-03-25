@@ -15,7 +15,7 @@ def call(Map config = [:]){
         platform = "ios"
     }
 
-    dir("${projectpath}/Build/tools/autopipeline")
+    dir("${config.projectpath}/Build/tools/autopipeline")
     {
         sh(script: """python3 run.py --package_path ${config.triggerPackagePath} --serial ${serial} --classify_perf ${config.classifyPerf} --platform ${platform} --package_version ${config.curfileName}  --enable_perf_type ${enable_perf_type} --bundle_id ${config.bundleid} --token ${token}""", returnStdout: true).trim()
     }
